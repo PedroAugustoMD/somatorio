@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Somatório de todos os números divisíveis por 3 ou 5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Numeros divisíveis</h1>
+
+    <label for="inputNumber">Número:</label>
+    <input type="number" id="inputNumber" />
+
+    <label for="result">Resultado:</label>
+    <input type="number" id="result" />
+
+    <button onclick="makeSum()">Fazer somatório</button>
+
+    <script>
+      function makeSum() {
+        var result = 0;
+        const number = parseInt(document.getElementById("inputNumber").value);
+        if (number < 0) {
+          alert("O valor passado deve ser positivo");
+        } else {
+          for (let i = 0; i < number; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+              result += i;
+            }
+          }
+        }
+        document.getElementById("result").value = result;
+      }
+    </script>
+  </body>
+</html>
